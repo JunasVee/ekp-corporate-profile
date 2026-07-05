@@ -26,7 +26,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
-          <Link href="/" className="flex flex-col items-center text-center shrink-0">
+          <Link href="/" className="flex flex-col items-start shrink-0">
             {/* Replace with: <Image src="/images/logo-ekp.png" alt="EKP" width={40} height={40} /> */}
             <div className="w-10 h-10 bg-ekp-red flex items-center justify-center rounded-sm mb-1">
               <span className="text-white font-black text-sm tracking-tight leading-none">EKP</span>
