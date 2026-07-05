@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 const highlights = [
@@ -27,20 +28,13 @@ export default function AboutPreview() {
               />
               Recommended: Construction site overview or office building photo
             */}
-            <div className="w-full aspect-[4/3] bg-gradient-to-br from-slate-700 to-slate-900 relative overflow-hidden">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center text-white/20">
-                  <p className="text-xs uppercase tracking-widest">About Image</p>
-                  <p className="text-xs">Place: /public/images/about-ekp.jpg</p>
-                </div>
-              </div>
-              {/* Decorative grid */}
-              <div
-                className="absolute inset-0 opacity-10"
-                style={{
-                  backgroundImage: `linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)`,
-                  backgroundSize: "40px 40px",
-                }}
+            <div className="w-full aspect-[4/3] relative overflow-hidden">
+              <Image
+                src="/images/about-ekp.jpg"
+                alt="EKP Project Site"
+                fill
+                className="object-cover"
+                priority
               />
             </div>
 
