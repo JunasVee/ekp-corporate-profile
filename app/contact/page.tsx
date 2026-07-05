@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { MapPin, Phone, Mail, Globe, Clock, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Globe, Clock } from "lucide-react";
 import { contactInfo } from "../_lib/data";
+import ContactForm from "../_components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Kontak",
@@ -62,85 +63,7 @@ export default function ContactPage() {
             {/* Form */}
             <div>
               <h2 className="text-2xl font-black text-ekp-navy mb-8">Kirim Pesan</h2>
-              <form className="bg-white p-8 shadow-sm" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
-                  <div>
-                    <label className="text-xs font-bold uppercase tracking-wide text-gray-600 block mb-2">
-                      Nama Lengkap *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      className="w-full border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-ekp-red transition-colors"
-                      placeholder="John Doe"
-                    />
-                  </div>
-                  <div>
-                    <label className="text-xs font-bold uppercase tracking-wide text-gray-600 block mb-2">
-                      Perusahaan
-                    </label>
-                    <input
-                      type="text"
-                      className="w-full border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-ekp-red transition-colors"
-                      placeholder="PT Example"
-                    />
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
-                  <div>
-                    <label className="text-xs font-bold uppercase tracking-wide text-gray-600 block mb-2">
-                      Email *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      className="w-full border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-ekp-red transition-colors"
-                      placeholder="email@example.com"
-                    />
-                  </div>
-                  <div>
-                    <label className="text-xs font-bold uppercase tracking-wide text-gray-600 block mb-2">
-                      Telepon
-                    </label>
-                    <input
-                      type="tel"
-                      className="w-full border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-ekp-red transition-colors"
-                      placeholder="+62 21 xxxx xxxx"
-                    />
-                  </div>
-                </div>
-                <div className="mb-5">
-                  <label className="text-xs font-bold uppercase tracking-wide text-gray-600 block mb-2">
-                    Subjek *
-                  </label>
-                  <select className="w-full border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-ekp-red transition-colors bg-white">
-                    <option value="">Pilih Subjek</option>
-                    <option>Permintaan Penawaran (RFQ)</option>
-                    <option>Informasi Layanan</option>
-                    <option>Vendor Registration</option>
-                    <option>Karir & Rekrutmen</option>
-                    <option>Lainnya</option>
-                  </select>
-                </div>
-                <div className="mb-6">
-                  <label className="text-xs font-bold uppercase tracking-wide text-gray-600 block mb-2">
-                    Pesan *
-                  </label>
-                  <textarea
-                    rows={5}
-                    required
-                    className="w-full border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-ekp-red transition-colors resize-none"
-                    placeholder="Tuliskan pesan atau kebutuhan proyek Anda..."
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-ekp-red text-white font-black text-sm uppercase tracking-wide hover:bg-ekp-red-dark transition-colors"
-                >
-                  Kirim Pesan
-                  <Send className="w-4 h-4" />
-                </button>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </div>
