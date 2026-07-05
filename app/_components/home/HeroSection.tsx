@@ -2,13 +2,15 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
-import { ArrowRight, Users, Shield, Award, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Users, Shield, Calendar, Briefcase, HardHat, ChevronLeft, ChevronRight } from "lucide-react";
 import { heroSlides, heroStats } from "../../_lib/data";
 
 const iconMap: Record<string, React.ElementType> = {
   users: Users,
   shield: Shield,
-  award: Award,
+  calendar: Calendar,
+  briefcase: Briefcase,
+  "hard-hat": HardHat,
 };
 
 // Background gradients for each slide — replace with real hero images:
@@ -78,7 +80,7 @@ export default function HeroSection() {
             </div>
 
             {/* Heading */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.1] mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.1] mb-4">
               {slide.title}
               <br />
               <span className="text-ekp-gold">{slide.titleHighlight}</span>
@@ -86,24 +88,36 @@ export default function HeroSection() {
               {slide.titleEnd}
             </h1>
 
+            {/* Sub judul */}
+            <p className="text-white/60 text-sm font-bold uppercase tracking-widest mb-4">
+              Building Energy. <span className="text-ekp-gold">Powering Future.</span>
+            </p>
+
             <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-8 max-w-xl">
               {slide.subtitle}
             </p>
 
             {/* Buttons */}
-            <div className="flex flex-wrap gap-4 mb-12">
+            <div className="flex flex-wrap gap-3 mb-12">
               <Link
                 href="/about"
-                className="flex items-center gap-2 px-7 py-3.5 bg-ekp-red text-white text-sm font-bold uppercase tracking-wide hover:bg-ekp-red-dark transition-colors"
+                className="flex items-center gap-2 px-6 py-3.5 bg-ekp-red text-white text-sm font-bold uppercase tracking-wide hover:bg-ekp-red-dark transition-colors"
               >
                 Company Profile
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                href="/contact"
-                className="flex items-center gap-2 px-7 py-3.5 border border-white/40 text-white text-sm font-bold uppercase tracking-wide hover:bg-white/10 hover:border-white transition-colors"
+                href="/services"
+                className="flex items-center gap-2 px-6 py-3.5 bg-white/10 border border-white/30 text-white text-sm font-bold uppercase tracking-wide hover:bg-white/20 hover:border-white transition-colors"
               >
-                Hubungi Kami
+                Our Services
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/contact"
+                className="flex items-center gap-2 px-6 py-3.5 border border-white/30 text-white text-sm font-bold uppercase tracking-wide hover:bg-white/10 hover:border-white transition-colors"
+              >
+                Contact Us
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -132,20 +146,20 @@ export default function HeroSection() {
           </div>
 
           {/* Right: floating stats */}
-          <div className="hidden lg:flex flex-col gap-4">
+          <div className="hidden lg:flex flex-col gap-2">
             {heroStats.map((stat) => {
               const Icon = iconMap[stat.icon];
               return (
                 <div
                   key={stat.label}
-                  className="flex items-center gap-4 bg-ekp-navy/80 backdrop-blur-sm border border-white/10 px-6 py-4 min-w-[270px]"
+                  className="flex items-center gap-4 bg-ekp-navy/85 backdrop-blur-sm border border-white/10 px-5 py-3.5 min-w-[260px]"
                 >
-                  <div className="w-10 h-10 bg-ekp-red/20 flex items-center justify-center shrink-0">
-                    {Icon && <Icon className="w-5 h-5 text-ekp-gold" />}
+                  <div className="w-9 h-9 bg-ekp-red/20 flex items-center justify-center shrink-0">
+                    {Icon && <Icon className="w-4 h-4 text-ekp-gold" />}
                   </div>
                   <div>
-                    <p className="text-white text-2xl font-black leading-none">{stat.value}</p>
-                    <p className="text-gray-400 text-xs uppercase tracking-wide mt-0.5">{stat.label}</p>
+                    <p className="text-white text-xl font-black leading-none">{stat.value}</p>
+                    <p className="text-gray-400 text-[11px] uppercase tracking-wide mt-0.5">{stat.label}</p>
                   </div>
                 </div>
               );

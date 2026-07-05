@@ -116,9 +116,11 @@ export const heroSlides: HeroSlide[] = [
 ];
 
 export const heroStats = [
-  { value: "150+", label: "Profesional Berpengalaman", icon: "users" },
-  { value: "100%", label: "Commitment to HSE", icon: "shield" },
-  { value: "100%", label: "Quality & Integrity", icon: "award" },
+  { value: "150+", label: "Professional Engineers", icon: "users" },
+  { value: "20+", label: "Years Experience", icon: "calendar" },
+  { value: "500+", label: "Skilled Workers", icon: "hard-hat" },
+  { value: "120+", label: "Projects", icon: "briefcase" },
+  { value: "100%", label: "Safety Commitment", icon: "shield" },
 ];
 
 // ─── Services / Business Sectors ─────────────────────────────
