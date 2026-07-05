@@ -24,25 +24,24 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 shrink-0">
-            {/* Replace with: <Image src="/images/logo-ekp.png" alt="EKP" width={48} height={48} /> */}
-            <div className="flex items-center gap-2.5">
-              <div className="w-11 h-11 bg-ekp-red flex items-center justify-center rounded-sm shrink-0">
-                <span className="text-white font-black text-base tracking-tight leading-none">EKP</span>
-              </div>
-              <div className="hidden sm:block leading-tight">
-                <p className="text-ekp-navy font-bold text-[11px] uppercase tracking-wide leading-tight">
-                  PT. Energi Konstruksi
-                </p>
-                <p className="text-ekp-navy font-bold text-[11px] uppercase tracking-wide leading-tight">
-                  Prima Nusantara
-                </p>
-                <p className="text-ekp-red text-[9px] font-semibold uppercase tracking-widest">
-                  Building Energy. Powering Future.
-                </p>
-              </div>
+          <Link href="/" className="flex flex-col items-center text-center shrink-0">
+            {/* Replace with: <Image src="/images/logo-ekp.png" alt="EKP" width={40} height={40} /> */}
+            <div className="w-10 h-10 bg-ekp-red flex items-center justify-center rounded-sm mb-1">
+              <span className="text-white font-black text-sm tracking-tight leading-none">EKP</span>
+            </div>
+            <div className="hidden sm:block">
+              <p className="text-ekp-navy font-black text-[10px] uppercase tracking-wider leading-tight">
+                PT. Energi Konstruksi
+              </p>
+              <p className="text-ekp-gold font-black text-[10px] uppercase tracking-wider leading-tight">
+                Prima Nusantara
+              </p>
+              <p className="text-[8px] font-semibold uppercase tracking-widest mt-0.5">
+                <span className="text-black">Building Energy.</span>{" "}
+                <span className="text-ekp-red">Powering Future.</span>
+              </p>
             </div>
           </Link>
 
@@ -57,10 +56,10 @@ export default function Navbar() {
               >
                 <Link
                   href={item.href}
-                  className="relative flex items-center gap-0.5 px-2.5 py-2 text-[13px] font-semibold text-ekp-navy hover:text-ekp-red transition-colors"
+                  className="relative flex items-center gap-0.5 px-2 py-2 text-[12px] font-semibold text-ekp-navy hover:text-ekp-red transition-colors"
                 >
-                  {item.label}
-                  {item.children && <ChevronDown className="w-3 h-3 mt-0.5" />}
+                  <span className="whitespace-nowrap">{item.label}</span>
+                  {item.children && <ChevronDown className="w-3 h-3 mt-0.5 shrink-0" />}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-ekp-red transition-all duration-300 group-hover:w-full" />
                 </Link>
 
