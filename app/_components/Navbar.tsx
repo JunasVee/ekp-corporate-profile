@@ -35,7 +35,7 @@ export default function Navbar() {
               <p className="text-ekp-navy font-black text-[10px] uppercase tracking-wider leading-tight">
                 PT. Energi Konstruksi
               </p>
-              <p className="text-ekp-gold font-black text-[10px] uppercase leading-tight" style={{ letterSpacing: "0.3em" }}>
+              <p className="text-ekp-gold font-black text-[10px] uppercase leading-tight" style={{ letterSpacing: "0.24em" }}>
                 Prima Nusantara
               </p>
               <p className="text-[8px] font-semibold uppercase tracking-widest mt-0.5">
